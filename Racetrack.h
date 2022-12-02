@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class Racetrack {njdkvnsjkvn
+class Racetrack {
     private:
         /**
          * The racetrack in printable form
