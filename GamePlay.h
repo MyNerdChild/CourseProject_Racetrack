@@ -13,6 +13,7 @@ public:
     //post:user will choose an option from the menu that will pick from the 4 tracks or exit the program
     void menu();
     int setTrack(int option);
+    void game();
     void player();
     void cpu1();
     void cpu2();

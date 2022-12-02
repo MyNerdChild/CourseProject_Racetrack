@@ -40,3 +40,9 @@ void GamePlay::menu() {
 int GamePlay::setTrack(int option) {
     return option;
 }
+
+void GamePlay::game() {
+
+
+
+}

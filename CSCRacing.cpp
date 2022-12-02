@@ -65,6 +65,7 @@ void StartGame(){
     char gameDone;
     cout << "StartGame\n";
 
+    gameplay.game();
 
 
     /****************The Game Ending********************/
