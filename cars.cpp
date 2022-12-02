@@ -3,3 +3,13 @@
 //
 
 //#include "cars.h"
+#include "cars.h"
+
+cars::cars() {
+
+}
+
+void cars::userTurn() {
+
+}
+

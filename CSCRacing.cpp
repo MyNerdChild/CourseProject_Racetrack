@@ -4,6 +4,7 @@
 #include "Racetrack.h"
 #include "GamePlay.h"
 
+using namespace std;
 
 GamePlay gameplay;
 Racetrack track;    //Create RaceTrack object
@@ -15,10 +16,6 @@ void SetUp();
 //pre:The menu and setup function has been set
 //post:A winner has been declared
 void StartGame();
-
-
-using namespace std;
-
 
 int main()
 {
@@ -67,6 +64,7 @@ void SetUp(){
 void StartGame(){
     char gameDone;
     cout << "StartGame\n";
+
 
 
     /****************The Game Ending********************/

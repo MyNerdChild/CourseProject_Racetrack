@@ -37,22 +37,6 @@ void GamePlay::menu() {
     }
 }
 
-void GamePlay::Settings() {
-
-   /* cout << "Settings\n";
-    cout << "option = " << option << endl;
-
-    switch(option) {
-        case 1:
-            ifstream trackFile("track1.txt");
-        case 2: ifstream trackFile("track2.txt");
-        ifstream trackFile("track3.txt");
-        ifstream trackFile("track4.txt");
-    }
-*/
-
-}
-
 int GamePlay::setTrack(int option) {
     return option;
 }
