@@ -7,6 +7,8 @@
 
 using namespace std;
 
+Racetrack track;    //Create RaceTrack object
+
 GamePlay::GamePlay() = default;
 
 void GamePlay::menu() {
@@ -24,22 +26,6 @@ void GamePlay::menu() {
          << "5. exit.txt" << endl;
     cin >> option;
 
-    if(option < 5 && option > 0)
-    {
-        //send to game settings
-        setTrack(option);
-    }
-    else if(option == 5){
-        exit(0);
-    }
-    else
-    {
-        menu();
-    }
-}
-
-int GamePlay::setTrack(int option) {
-    return option;
 }
 
 void GamePlay::game() {
@@ -48,40 +34,35 @@ void GamePlay::game() {
     int randomNum = randomUserStart();
     cout << randomNum << endl;
 
-    switch (randomNum) {
-        case 1: player();
-                break;
-        case 2: cpu1();
-                break;
-        case 3: cpu2();
-                break;
-    }
+    /*do{
+        cout << "CAR ID: 1 Coordinates: 1,1 Max Speed: 5 Velocity: 0,0" << endl
+             << "CAR ID: 2 Coordinates: 1,2 Max Speed: 5 Velocity: 0,0" << endl
+             << "CAR ID: 3 Coordinates: 1,3 Max Speed: 5 Velocity: 0,0" << endl;
 
-    do{
-        if(randomNum == 1)
-        {
-            randomNum=+1; // equals 2
-            cpu1();
+        switch (randomNum) {
+            case 1: player();
+                    randomNum+=1;   //now equals 2
+                    break;
+            case 2: cpu1();
+                    randomNum+=1;   //now equals 3
+                    break;
+            case 3: cpu2();
+                    randomNum=1;   //now equals 2
+                    break;
         }
-        else if(randomNum == 2)
-        {
-            randomNum=+1; // equals 3
-            cpu2();
-        }
-        else
-        {
-            randomNum = 1; // equals 1
-            player();
-        }
-
-    }while(gameEnd() == false);
-
-    winnerOrloser();
+    }while(gameEnd() == false);*/
 
 }
 
 void GamePlay::player() {
+    int x, y;
     cout << "player's turn" << endl;
+    cout << "Enter X Coordinate: ";
+    cin >> x;   //0-end
+    cout << "Enter X Coordinate: ";
+    cin >> y;   //0 - -end
+    if(velocity)
+    track.setTrack( x,y, '1');
 }
 
 void GamePlay::cpu1() {
@@ -110,17 +91,18 @@ int GamePlay::randomUserStart() {
 
 bool GamePlay::gameEnd() {
     cout << "gameEnd function" << endl;
+    int rn1 = randomNum();
 
-    if(randomNum() == 8){
+    if(rn1 == 1){
         cout << "Car 1 wins" << endl;
         return true;
     }
-    else if(randomNum() == 2){
+    else if(rn1 == 5){
         cout << "Car 2 wins" << endl;
 
         return true;
     }
-    else if(randomNum() == 5){
+    else if(rn1 == 10){
         cout << "Car 3 wins" << endl;
 
         return true;
@@ -130,9 +112,6 @@ bool GamePlay::gameEnd() {
     }
 }
 
-string GamePlay::winnerOrloser() {
-    return std::string();
-}
 
 //delete later
 int GamePlay::randomNum() {

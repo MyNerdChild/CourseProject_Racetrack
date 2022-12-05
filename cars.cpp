@@ -16,9 +16,6 @@ cars::cars() {
 
 void cars::userTurn() {
 
-}
-
-void cars::cpuTurn() {
 
 }
 
